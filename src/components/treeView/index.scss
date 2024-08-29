@@ -1,0 +1,52 @@
+.list {
+  cursor: pointer;
+  &-item {
+    display: flex;
+    padding: 5px;
+    &__icon{
+      padding-bottom: 5px;
+    }
+    &__title{
+      display: flex;
+      align-items: center;
+
+      &-alert {
+        width: 10px;
+        height: 10px;
+        background-color: red;
+        border-radius: 10px;
+        margin-left: 5px;
+      }
+
+      &-status {
+        width: 10px;
+        height: 10px;
+        background-color: green;
+        border-radius: 10px;
+        margin-left: 5px;
+      }
+      img {
+        padding: 0 5px;
+      }
+    }
+    &-subtree {
+      padding-left: 15px;
+      border-left: 1px solid #00000008;
+    }
+  }
+}
+
+.select {
+  background-color: #2188FF;
+  color: white;
+  padding: 2px;
+}
+
+.close {
+  transform: rotate(270deg);
+  padding-bottom: 5px;
+}
+
+.open {
+  padding-bottom: 2px;
+}
