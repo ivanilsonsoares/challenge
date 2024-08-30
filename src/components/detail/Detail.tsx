@@ -9,7 +9,7 @@ const Detail = (props: any) => {
         <div className="detail-header">
             {props.itemDetail.name} 
             {
-              props.itemDetail.sensorType === 'energy' ? <img src={Bolt} alt="Bolt" /> : 
+              props.itemDetail.sensorType === 'energy' ? <img className="detail-header__image" src={Bolt} alt="Bolt" /> : 
               props.itemDetail?.status !== undefined && props.itemDetail?.status !== null ? <div className={props.itemDetail.status === "alert" ? "list-item__title-alert" : "list-item__title-status" }></div> : <></>
             }
         </div>

@@ -22,8 +22,12 @@ const Board = (props: any) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const handleGetLists = async () => {
+    setFinal([])
+    setItemDetail({})
+    setSearchResults([])
+    setFilterCritical(false)
+    setFilterEnergy(false)
     if (props.data.id !== undefined) {
-      setFinal([])
       const resultLocations = await getCompaniesLocations(props.data.id);
       const resultAssets = await getCompaniesAssets(props.data.id);
       if(resultAssets.legth !== 0 && resultLocations.legth !== 0) {
@@ -179,7 +183,7 @@ const Board = (props: any) => {
         </div>
         <div className="board-container-body-item-detail">
           {
-            itemDetail.gatewayId !== undefined || final.length !== 0 ? <Detail itemDetail={itemDetail} /> : <></>
+            itemDetail.gatewayId !== undefined && final.length !== 0 ? <Detail itemDetail={itemDetail} /> : <></>
           }
         </div>
       </div>
